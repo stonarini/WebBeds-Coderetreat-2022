@@ -1,4 +1,4 @@
-# WebBeds' Gloal Day of Coderetreat
+# WebBeds' Global Day of Coderetreat
 
 ![](coderetreat.jpg)
 
