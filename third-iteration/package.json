@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
+}
