@@ -1,0 +1,9 @@
+# editor
+.vscode
+
+# python
+.pytest_cache
+__pycache__
+
+# javascript
+node_modules
