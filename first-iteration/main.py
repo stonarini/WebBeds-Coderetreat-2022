@@ -8,14 +8,32 @@ def start_game(col_num, row_num, cells):
 
     return matrix
 
-def should_die(matrix, cell):
+
+def next_cycle(matrix, cell):
     col_num = [cell[0] - 1, cell[0], cell[0] + 1]
     row_num = [cell[1] - 1, cell[1], cell[1] + 1]
 
-    counter = 1
+    counter = 0
     for col in col_num:
         for row in row_num:
-            if matrix[col][row] == 1:
-                counter += 1
-    
-    if counter >= 2 
+            if col >= 0 and row >= 0 and col < len(matrix) and row < len(matrix[0]):
+                counter += matrix[col][row]
+
+    current_cell = matrix[cell[0]][cell[1]]
+
+    if (2 <= counter - current_cell <= 3 and current_cell == 1) or (
+        current_cell == 0 and counter - current_cell == 3
+    ):
+        return 1
+    else:
+        return 0
+
+
+def next_tik(matrix):
+    new_mat = []
+    for i, row in enumerate(matrix):
+        new_row = []
+        for j, cell in enumerate(row):
+            new_row.append(next_cycle(matrix, (i, j)))
+        new_mat.append(new_row)
+    return new_mat
